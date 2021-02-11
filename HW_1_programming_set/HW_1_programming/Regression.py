@@ -252,6 +252,8 @@ def main(args):
             print("Validation mean square error: ", val_error)
 
         ### Your job 2 starts here ###
+        # Here you have to be able to decide which polynomial degree (i.e., poly) leads to the smallest val_error
+        # You may use the variable best_poly and cur_best_val_error defined above.
 
         ### Your job 2 ends here ###
 
