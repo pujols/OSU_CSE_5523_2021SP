@@ -42,6 +42,8 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 
 
+
+
 # Introduction
 
 In this homework, you are to implement linear and nonlinear regression and KNN (K-nearest neighbors) for classification and apply your completed algorithms to multiple different datasets to see their pros and cons.
@@ -71,6 +73,8 @@ In this homework, you are to implement linear and nonlinear regression and KNN (
 * In `Regression.py` and `KNN.py`, we also provide some more instructions and hints for what functions or operations you may want to use.
 
 * Caution! python and NumPy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.
+
+
 
 
 
@@ -149,6 +153,8 @@ These commands will select for each data the corresponding best polynomial degre
 
 
 
+
+
 # Question 2: KNN for classification (20 pts)
 
 * You will implement KNN for "binary" classification in this question. The data are images of digit 1 and 8. You are to amend your implementation into `KNN.py`.
@@ -174,9 +180,13 @@ Please report `best_dis_metric`, `best_K`, `best_val_accuracy` , and `test_accur
 
 
 
+
+
 # What to submit:
 
 * Please see the beginning of the page. Please follow **Submission instructions** to submit a .zip file named name.number.zip (e.g., chao.209.zip). Failing to submit a single .zip file will not to be graded.
+
+
 
 
 
