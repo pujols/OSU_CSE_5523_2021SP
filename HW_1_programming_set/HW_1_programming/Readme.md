@@ -76,48 +76,71 @@ In this homework, you are to implement linear and nonlinear regression and KNN (
 * You will implement linear and nonlinear regression in this question. You are to amend your implementation into `Regression.py`.
 
 * There are many sub-functions in `Regression.py`. You can ignore all of them but `def linear_regression(X, Y)` and `def main(args)`. In `main(args)`, you will see a general pipeline of machine learning: <br/>
-  - Loading data: `X_original, Y = data_loader(args)`, in which `X` is a 1-by-N matrix (numpy array) and each column is a data instance. You can type `X[:, 0]` to extract the "first" data instance from `X`. (Caution! python and numpy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.) <br/>
-  - Feature transform: `X = polynomial_transform(np.copy(X_original), args.polynomial)` extends each column of `X` to its polynomial representation. For example, given x, this transform will extends it to [x, x^2, ..., x^(args.polynomial)]^T.
-  - Learning patterns: `w, b = linear_regression(X, Y)`, in which the code takes `X` and the desired labels `Y` as input and output the weights `w` and the bias `b`.
-  - Apply the learned patterns to the data: `training_error = np.mean((np.matmul(w.transpose(), X) + b - Y.transpose()) ** 2)` and `test_error = np.mean((np.matmul(w.transpose(), X_test) + b - Y_test.transpose()) ** 2)` compute the training and test error.
+  - Loading data: `X_original, Y_original = data_loader(args)`, in which `X_original` is a 1-by-N matrix (numpy array) and each column is a data instance. You can type `X[:, 0]` to extract the "first" data instance from `X_original`. (Caution! python and numpy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.) <br/>
+  - Data separation: Separate data into training, validation, and test set.
+  - Training_and_validation: the for loop `for poly in range(1, 12)` will try different polynomial feature transforms and check which one leads to the smallest validation error.
+  - Feature transform: `X_train = polynomial_transform(np.copy(X_original_train), int(poly))` extends each column of `X` to its polynomial representation. For example, given x, this transform will extends it to [x, x^2, ..., x^(int(poly))]^T.
+  - Learning patterns: `w, b = linear_regression(X_train, Y_train)`, in which the code takes `X_train` and the desired labels `Y_train` as input and output the weights `w` and the bias `b`.
+  - Apply the learned patterns to the data: `train_error = np.mean((np.matmul(w.transpose(), X_train) + b - Y_train.transpose()) ** 2)` and `test_error = np.mean((np.matmul(w.transpose(), X_test) + b - Y_test.transpose()) ** 2)` compute the training and test error.
   
-## Coding:
+## Coding (15/30 pts):
 
-You have one part to implement in `LR.py`:
+You have two parts to implement in `Regression.py`:
 
-* The function `def linear_regression(X, Y)`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of linear regression. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job starts here ###` and `### Your job ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+* The function `def linear_regression(X, Y)`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of linear regression. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job 1 starts here ###` and `### Your job 1 ends here ###`. Note that, `1` has not been appended into `X`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+
+* The decision of which polynomial degree to use via the validation process: please go to `def main(args)`. You are to implement your code between `### Your job 2 starts here ###` and and `### Your job 2 ends here ###`. You will see some instructions there. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
 ## Auto grader:
 
 * You may run the following command to test your implementation<br/>
-`python3 LR.py --data simple --auto_grade`<br/>
+`python3 Regression.py --data simple --auto_grade`<br/>
 Note that, the auto grader is to check your implementation semantics. If you have syntax errors, you may get python error messages before you can see the auto_graders' results.
 
 * Again, the auto_grader is just to simply check your implementation for a toy case. It will not be used for your final grading.
 
-## Play with different datasets (Task 1 - linear data):
+## Play with different datasets (Task 1 - linear testing):
 
 * Please run the following command<br/>
-`python3 LR.py --data linear --polynomial 1 --display --save`<br/>
+`python3 Regression.py --data linear --polynomial 1 --display --save`<br/>
 This command will run linear regression on a 1D linear data (the x-axis is the feature and the y-axis is the label). You will see the resulting `w` and `b` being displayed in your command line. You will also see the training (on red points) and test error (on blue points). 
 
 * The code will generate `linear_1.png` and `Results_linear_1.npz`, which you will include in your submission.
 
-* You may play with other commands by (1) removing `--save` (2) changing the `--polynomial 1` to a non-negative integer (e.g, 2, 3, ..., 15). You will see that, while larger values lead to smaller training errors, the test error is not necessarily lower. For very large value, the test error can go very large.
+* You may play with other commands by (1) removing `--save` (2) changing the `--polynomial 1` to a non-negative integer (e.g, 2, 3, ..., 12). You will see that, while larger values lead to smaller training errors, the test error is not necessarily lower. For very large value, the test error can go very large.
 
 
 ## Play with different datasets (Task 2 - quadratic data):
 
 * Please run the following command<br/>
-`python3 LR.py --data quadratic --polynomial 2 --display --save`<br/>
+`python3 Regression.py --data quadratic --polynomial 2 --display --save`<br/>
 This command will run linear regression on a 1D quadratic data (the x-axis is the feature and the y-axis is the label). The code will produce polynomial = 2 representation for the data (i.e., `X` becomes 2-by-N). You will see the resulting `w` and `b` being displayed in your command line. You will also see the training (on red points) and test error (on blue points). 
 
 * The code will generate `quadratic_2.png` and `Results_quadratic_2.npz`, which you will include in your submission.
 
-* You may play with other commands by (1) removing `--save` (2) changing the `--polynomial 2` to a non-negative integer (e.g, 1, 3, ..., 15). You will see that, while larger values lead to smaller training error, the test error is not neccessarily lower. For very large value, the test error can go verly large.
+* You may play with other commands by (1) removing `--save` (2) changing the `--polynomial 2` to a non-negative integer (e.g, 1, 3, ..., 12). You will see that, while larger values lead to smaller training error, the test error is not neccessarily lower. For very large value, the test error can go verly large.
 
-## What to submit:
 
-* Your completed python script `LR.py`
 
-* Your 4 generated results for Question 2: `linear_1.png`, `quadratic_2.png`, `Results_linear_1.npz`, and `Results_quadratic_2.npz`
+## Play with different datasets (Task 3 - unkown degree data):
+
+* Please run the following command<br/>
+`python3 Regression.py --data unknown --polynomial 5 --display --save`<br/>
+This command will run linear regression on a 1D data (the x-axis is the feature and the y-axis is the label). The code will produce polynomial = 5 representation for the data (i.e., `X` becomes 5-by-N). You will see the resulting `w` and `b` being displayed in your command line. You will also see the training (on red points) and test error (on blue points). 
+
+* The code will generate `unknown_5.png` and `Results_unknown_5.npz`, which you will include in your submission.
+
+## Play with different datasets (Task 4 - unkown degree noisy data):
+
+* Please run the following command<br/>
+`python3 Regression.py --data unknown_noise --polynomial 5 --display --save`<br/>
+This command will run linear regression on a 1D data (the x-axis is the feature and the y-axis is the label), which is exactly the same as in Task 3 but with additional noise. The code will produce polynomial = 5 representation for the data (i.e., `X` becomes 5-by-N). You will see the resulting `w` and `b` being displayed in your command line. You will also see the training (on red points) and test error (on blue points). 
+
+* The code will generate `unknown_noise_5.png` and `Results_unknown_noise_5.npz`, which you will include in your submission.
+
+## Play with training_validation_testing:
+
+* Please run the following command<br/>
+`python3 Regression.py --data linear --validation --display`<br/>
+
+# What to report in `name.number.pdf`
