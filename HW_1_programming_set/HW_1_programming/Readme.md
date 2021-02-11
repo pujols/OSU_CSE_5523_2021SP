@@ -171,7 +171,7 @@ You have three parts to implement in `KNN.py`:
 
 * The leave-one-out cross validation in `main(args)`: You are to implement your code between `### Your job 3 starts here ###` and `### Your job 3 ends here ###`. After this part of the code, you should output the `best_dis_metric` from ["L1", "L2", "cosine"], the `best_K` from [1, 3, 5, 7, 9, 11, 13, 15, 17], and the corresponding `best_val_accuracy` and `test_accuracy`. Note that, the accuracy should be between 0 and 1. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
-## Play with the data:
+## Play with the data (5/20 pts):
 
 * Please run the following command<br/>
 `python3 KNN.py`<br/>
