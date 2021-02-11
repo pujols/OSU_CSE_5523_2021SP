@@ -1,25 +1,25 @@
-# Homework 2
+# Homework 1
 
 ## Submission instructions
 
-* Due date and time: October 12st (Monday), 11:59 pm ET
+* Due date and time: February 24st (Wednesday), 11:59 pm ET
 
 * Carmen submission: 
 Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the following files
-  - your completed python script `DR.py` (for dimensionality reduction - Question 1)
-  - your completed python script `LR.py` (for linear regression - Question 2)
-  - your 6 generated results for Question 1: `MNIST_2.png`, `Swiss_Roll_2.png`, `toy_data_2.png`, `Results_MNIST_2.npz`, `Results_Swiss_Roll_2.npz`, and `Results_toy_data_2.npz`.
-  - your 4 generated results for Question 2: `linear_1.png`, `quadratic_2.png`, `Results_linear_1.npz`, and `Results_quadratic_2.npz`
+  - your completed python script `Regression.py` (for regression - Question 1)
+  - your completed python script `KNN.py` (for KNN - Question 2)
+  - your 8 generated results for Question 1: `linear_1.png`, `quadratic_2.png`, `unknown_5.png`, `unknown_noise_5.png`, `Results_linear_1.npz`, `Results_quadratic_2.npz`, `Results_unknown_5.npz`, and `Results_unknown_noise_5.npz`.
+  - your report in a PDF named `name.number.pdf`.
 
-* Collaboration: You may discuss the homework with your classmates. However, you need to write your own solutions and submit them separately. In your submission, you need to list with whom you have discussed the homework. Please list each classmate’s name and name.number (e.g., Wei-Lun Chao, chao.209) as a row at the end of `LR.py` and `DR.py`. That is, if you discussed with two classmates, your .txt file will have two rows. Please consult the syllabus for what is and is not acceptable collaboration.
+* Collaboration: You may discuss the homework with your classmates. However, you need to write your own solutions, complete your own .py files, and submit them separately. In your submission, you need to list with whom you have discussed the homework. Please list each classmate’s name and name.number (e.g., Wei-Lun Chao, chao.209) as a row at the end of `Regression.py` and `KNN.py`. That is, if you discussed with two classmates, your .py file will have two rows. Please consult the syllabus for what is and is not acceptable collaboration.
 
 ## Implementation instructions
 
 * Download or clone this repository.
 
-* You will see four python scripts: `DR.py`, `LR.py`, `feature_normalization.py`, and `numpy_example.py`.
+* You will see four python scripts: `Regression.py`, `KNN.py`, `feature_normalization.py`, and `numpy_example.py`.
 
-* You will see a `data` folder, which contains `mnist_test.csv`, `Linear.npz`, `Quadratic.npz`, and `Swiss_Roll.npz`.
+* You will see a `data` folder, which contains `mnist_test.csv`, `Linear.npz`, `Quadratic.npz`, `Unknown.npz`, and `Unknown_noise.npz`.
 
 * You will see a folder `for_display`, which simply contains some images used for display here.
 
@@ -44,20 +44,17 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 # Introduction
 
-In this homework, you are to implement principal component analysis (PCA) for dimensionality reduction and linear regression and apply your completed algorithms to multiple different datasets to see their pros and cons.
+In this homework, you are to implement linear and nonlinear regression and KNN (K-nearest neighbors) for classification and apply your completed algorithms to multiple different datasets to see their pros and cons.
 
-* In Question 1, you will play with Swiss Roll data, MNIST (digit data), and some other toy datasets.
+* In Question 1, you will play with simple linear and quadratic data (x-axis is the feature variable; y-axis is the real-value label; each point is a data instance: red for training and blue for testing) and some other more complicated data.
 
-![Alt text](https://github.com/pujols/OSU_CSE_3521_5521_2020AU/blob/master/HW_2_Porgramming_Set/HW_2_Programming/for_display/Swiss.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2021SP/blob/master/HW_1_programming_set/HW_1_programming/for_display/linear_1.png)
 
-![Alt text](https://github.com/pujols/OSU_CSE_3521_5521_2020AU/blob/master/HW_2_Porgramming_Set/HW_2_Programming/for_display/Digits.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2021SP/blob/master/HW_1_programming_set/HW_1_programming/for_display/quadratic_2.png)
 
+* In Question 2, you will play with the MNIST dataset (digit data).
 
-* In Question 2, you will play with simple linear and quadratic data (x-axis is the feature variable; y-axis is the real-value label; each point is a data instance: red for training and blue for testing) and some other toy datasets.
-
-![Alt text](https://github.com/pujols/OSU_CSE_3521_5521_2020AU/blob/master/HW_2_Porgramming_Set/HW_2_Programming/for_display/linear_1.png)
-
-![Alt text](https://github.com/pujols/OSU_CSE_3521_5521_2020AU/blob/master/HW_2_Porgramming_Set/HW_2_Programming/for_display/quadratic_2.png)
+![Alt text](https://github.com/pujols/OSU_CSE_5523_2021SP/blob/master/HW_1_programming_set/HW_1_programming/for_display/Digits.png)
 
 
 # Question 0: Exercise
@@ -68,97 +65,17 @@ In this homework, you are to implement principal component analysis (PCA) for di
 
 * We have provided some useful Numpy operations that you may want to use in `numpy_example.py`. You may want to comment out all the lines first, and execute them one by one or in a group to see the results and the differences. You can run the command `python3 numpy_example.py`.
 
-* We also provide another python script `feature_normalization.py`, which will guide you through L2 normalization, covariance matrices, z-score, and whitening. You may find some code here helpful for your implementation. You can run the command `python3 feature_normalization.py`.
+* We also provide another python script `feature_normalization.py`, which will guide you through L2 normalization, covariance matrices, z-score, and whitening. You may find some code here helpful for your implementation in this homework or other homework. You can run the command `python3 feature_normalization.py`.
 
-* In `DR.py` and `LR.py`, we also provide some more instructions and hints for what functions or operations you may want to use.
+* In `Regression.py` and `KNN.py`, we also provide some more instructions and hints for what functions or operations you may want to use.
 
 * Caution! python and NumPy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.
 
 
-# Question 1: Dimensionality reduction (50 pts)
+# Question 1: Linear and nonlinear regression (30 pts)
+* You will implement linear and nonlinear regression in this question. You are to amend your implementation into `Regression.py`.
 
-* You will implement PCA in this question. You are to amend your implementation into `DR.py`.
-
-* There are many sub-functions in `DR.py`. You can ignore all of them but `def PCA(X, out_dim)` and `main(args)`. In `main(args)`, you will see a general pipeline of machine learning: <br/>
-  - Loading data: `X, phi = data_loader(args)`, in which `X` is a D-by-N matrix (numpy array) and each column is a data instance. You can type `X[:, 0]` to extract the "first" data instance from `X`. (**Caution! python and numpy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.**) To ensure that `X[:, 0]` is a column vector, you may do `X[:, 0].reshape(-1, 1)`, which will give you a column vector of size D-by-1. <br/>
-  - Learning patterns: `mu, W = PCA(np.copy(X), out_dim)`, in which the code takes `X` and the desired output dimensions as input and output the mean vector `mu` and the projection matrix (numpy array) `W`.
-  - Apply the learned patterns to the data: which will be part of your job to implement.
-  
-## Coding:
-
-You have two parts to implement in `DR.py`:
-
-* The function `def PCA(X, out_dim)`: please go to the function and read the input format, output format, and the instructions (for what to do) carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`mu` and `Sigma`), which will be used to compute the outputs. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job 1 starts here ###` and `### Your job 1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
-
-* Apply the learned patterns: After obtaining the mean vector `mu` and the projection matrix (numpy array) `W`, you are to apply them to your data `X`. You are to implement your code between `### Your job 2 starts here ###` and `### Your job 2 ends here ###`. Again, you are free to create more space between those two lines. You can assume that `X`, `mu`, and `W` are already defined, and your goal is to create the matrix (numpy array) `new_X`, which is out_dim-by-N (out_dim and N are both already defined). Each column (data instance) of `new_X` corresponds to the same column in `X`.
-
-## Auto grader:
-
-* You may run the following command to test your implementation<br/>
-`python3 DR.py --data simple_data --auto_grade`<br/>
-Note that, the auto grader is to check your implementation semantics. If you have syntax errors, you may get python error messages before you can see the auto_graders' results.
-
-* Again, the auto_grader is just to simply check your implementation for a toy case. It will not be used for your final grading.
-
-## Play with different datasets (Task 1 - toy data):
-
-* Please run the following command<br/>
-`python3 DR.py --data toy_data --method PCA --out_dim 2 --display --save`<br/>
-This command will run PCA on a simple angle shape data in 3D and project it to 2D (defined by --out_dim 2). You will see the resulting mean vector and projection matrix being displayed in your command line. You will also see a figure showing the data before and after PCA. Points of similar colors mean that they are similar, and PCA does preserve such similarity.
-
-* The code will generate `toy_data_2.png` and `Results_toy_data_2.npz`, which you will include in your submission.
-
-* You may play with other commands by (1) removing `--save` (2) changing the `--out_dim 2` to 1. You may also remove `--display` if you don't want to display the figure.
-
-
-## Play with different datasets (Task 2 - MNIST):
-
-* Please run the following command<br/>
-`python3 DR.py --data MNIST --method PCA --out_dim 2 --display --save`<br/>
-This command will run PCA on 1010 digit images of digit "3". The size of each image is 28-by-28, or equivalently a 784-dimensional vector. We are to perform PCA to reduce its dimensionality (e.g., to 2) and then use the two dimensions to reconstruct the 28-by-28 image. You will see a figure showing multiple images. The leftmost image is the mean image. The second to the right and the rightmost images are one original "3" image and the reconstructed image. The middle images show you the projections (here there are two projections). Note that, in doing PCA, we vectorize an image and get a mean vector and a projection matrix with several principal components. Then to display them, we then reshape them back to images.
-
-![Alt text](https://github.com/pujols/OSU_CSE_3521_5521_2020AU/blob/master/HW_2_Porgramming_Set/HW_2_Programming/for_display/MNIST.png)
-
-* The code will generate `MNIST_2.png` and `Results_MNIST_2.npz`, which you will include in your submission.
-
-* You may play with other commands by (1) removing `--save` (2) changing the `--out_dim 2` to some other non-negative integers (e.g., 1, 3, 4, 200). You will see that the reconstructed images get closer to the original image when out_dim approaches 784. 
-
-## Play with different datasets (Task 3 - Swiss Roll):
-
-* Please run the following command<br/>
-`python3 DR.py --data Swiss_Roll --method PCA --out_dim 2 --display --save`<br/>
-This command will run PCA on the 3D Swiss Roll dataset to reduce the dimensionality to 2D. You will see the resulting mean vector and projection matrix being displayed in your command line. You will also see a figure showing the data before and after PCA. Points of similar colors mean that they are similar (following the Swiss Roll shape in and out). You will see that PCA cannot preserve the similarity. This is because that PCA can only do linear projection: simply flatten the roll but not unfold it.
-
-![Alt text](https://github.com/pujols/OSU_CSE_3521_5521_2020AU/blob/master/HW_2_Porgramming_Set/HW_2_Programming/for_display/Swiss_Roll.png)
-
-* The code will generate `Swiss_Roll_2.png` and `Results_Swiss_Roll_2.npz`, which you will include in your submission.
-
-* You may play with other commands by (1) removing `--save` (2) changing the `--out_dim 2` to 1. You may also remove `--display` if you don't want to display the figure.
-
-## What to submit:
-
-* Your completed python script `DR.py`
-
-* Your 6 generated results for Question 1: `MNIST_2.png`, `Swiss_Roll_2.png`, `toy_data_2.png`, `Results_MNIST_2.npz`, `Results_Swiss_Roll_2.npz`, and `Results_toy_data_2.npz`.
-
-## Extension: nonlinear dimensionality reduction (No worries! We have implemented it for you!)
-
-Above you see that PCA cannot preserve the similarity (neighbors) along with the Swiss Roll. Remember that in the lecture we introduce nonlinear dimensionality reduction algorithms that aim to preserve the neighbors. Here you are to play with one algorithm, Laplacian Eigenmap (LE).
-
-* Please run the following command<br/>
-`python3 DR.py --data Swiss_Roll --method LE --out_dim 2 --display`<br/>
-This command will run LE on the 3D Swiss Roll dataset to reduce the dimensionality to 2D. You will also see a figure showing the data before and after LE. Points of similar colors mean that they are similar (following the Swiss Roll shape in and out). You will see that LE can preserve the similarity, unfolding the roll.
-
-![Alt text](https://github.com/pujols/OSU_CSE_3521_5521_2020AU/blob/master/HW_2_Porgramming_Set/HW_2_Programming/for_display/Swiss_LE.png)
-
-* You do not need to submit anything for this extension.
-
-
-
-# Question 2: Linear regression (50 pts)
-* You will implement linear regression in this question. You are to amend your implementation into `LR.py`.
-
-* There are many sub-functions in `LR.py`. You can ignore all of them but `def linear_regression(X, Y)` and `def main(args)`. In `main(args)`, you will see a general pipeline of machine learning: <br/>
+* There are many sub-functions in `Regression.py`. You can ignore all of them but `def linear_regression(X, Y)` and `def main(args)`. In `main(args)`, you will see a general pipeline of machine learning: <br/>
   - Loading data: `X_original, Y = data_loader(args)`, in which `X` is a 1-by-N matrix (numpy array) and each column is a data instance. You can type `X[:, 0]` to extract the "first" data instance from `X`. (Caution! python and numpy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.) <br/>
   - Feature transform: `X = polynomial_transform(np.copy(X_original), args.polynomial)` extends each column of `X` to its polynomial representation. For example, given x, this transform will extends it to [x, x^2, ..., x^(args.polynomial)]^T.
   - Learning patterns: `w, b = linear_regression(X, Y)`, in which the code takes `X` and the desired labels `Y` as input and output the weights `w` and the bias `b`.
