@@ -89,6 +89,7 @@ def KNN(x_test, X, Y, K, dis_metric):
     ### Your job 2 ends here ###
     return y_predict
 
+
 def main(args):
     np.random.permutation(10)
     X_train, X_test, Y_train, Y_test = data_loader(args)
