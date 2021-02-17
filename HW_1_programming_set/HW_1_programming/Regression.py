@@ -251,12 +251,13 @@ def main(args):
             print("Training mean square error: ", train_error)
             print("Validation mean square error: ", val_error)
 
-        ### Your job 2 starts here ###
-        # Here you have to be able to decide which polynomial degree (i.e., poly) leads to the smallest val_error
-        # You may use the variable best_poly and cur_best_val_error defined above.
-        # Please record the best polynomial degree in the variable best_poly.
+            ### Your job 2 starts here ###
+            # Here you have to be able to decide which polynomial degree (i.e., poly) within
+            # the for loop (i.e., "for poly in range(1, 12)") that the leads to the smallest val_error
+            # You may use the variable "best_poly" and "cur_best_val_error" defined above.
+            # Please record the best polynomial degree in the variable best_poly.
 
-        ### Your job 2 ends here ###
+            ### Your job 2 ends here ###
 
         # Running LR (in final testing step)
         X_train = polynomial_transform(np.copy(X_original_train),
