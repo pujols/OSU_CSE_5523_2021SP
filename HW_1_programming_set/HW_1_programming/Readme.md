@@ -80,7 +80,7 @@ In this homework, you are to implement linear and nonlinear regression and KNN (
 
 # Question 1: Linear and nonlinear regression (30 pts)
 
-* You will implement linear and nonlinear regression in this question. You are to amend your implementation into `Regression.py`.
+* You will implement linear and nonlinear regression (with the RSS loss) in this question. You are to amend your implementation into `Regression.py`.
 
 * There are many sub-functions in `Regression.py`. You can ignore all of them but `def linear_regression(X, Y)` and `def main(args)`. In `main(args)`, you will see a general pipeline of machine learning: <br/>
   - Loading data: `X_original, Y_original = data_loader(args)`, in which `X_original` is a 1-by-N matrix (numpy array) and each column is a data instance. You can type `X[:, 0]` to extract the "first" data instance from `X_original`. (Caution! python and numpy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.) <br/>
