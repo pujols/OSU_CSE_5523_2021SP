@@ -142,7 +142,7 @@ This command will run linear regression on a 1D data (the x-axis is the feature 
 
 * The code will generate `unknown_noise_5.png` and `Results_unknown_noise_5.npz`, which you will include in your submission.
 
-## Play with training_validation_testing (Task 5, , 7/30 pts):
+## Play with training_validation_testing (Task 5, 7/30 pts):
 
 * Please run the following commands<br/>
 `python3 Regression.py --data linear --validation --display`<br/>
