@@ -180,6 +180,7 @@ def linear_regression(X, Y):
     N = X.shape[1] # number of data instances
 
     ### Your job 1 starts here ###
+    # Note that, if you want to apply the closed-form solution, you may want to append 1 to every column of X
 
     ### Your job 1 ends here ###
 
