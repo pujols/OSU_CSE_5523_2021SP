@@ -85,11 +85,10 @@ In this homework, you are to implement several binary classification algorithms,
 * `def sigmoid` implements the sigmoid function.
 
 * **You will see similar code structure for other questions!**
-* 
   
 ## Coding (10/20 pts):
 
-You have one parts to implement in `def logistic_train`:
+You have one part to implement in `def logistic_train`:
 
 * The function `def logistic_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q1 starts here ###` and `### Your job Q1 ends here ###`. Note that, `1` has not been appended into `X` and we define `tilde_X`for you. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
@@ -159,40 +158,29 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 
 
-# Question 1: Pocket algorithm (20 pts)
+# Question 2: Pocket algorithm (20 pts)
 
 * You will implement the pocket algorithm (improved perceptron) in this question. You are to amend your implementation into `Classification.py`.
 
-* There are many sub-functions in `Classification.py`. You can ignore all of them but `def logistic_train`, `def linear_model_accuracy`, `def main` and `def sigmoid`. 
+* There are many sub-functions in `Classification.py`. You can ignore all of them but `def pocket_train`, `def linear_model_accuracy`, `def main`. The main contents of `def linear_model_accuracy` and `def main` are the same as in Question 1.
 
-* In `main`, you will see a general pipeline of machine learning: <br/>
-  - Loading data: `X_train, Y_train, X_val, Y_val, X_test, Y_test = data_loader(args)`, in which each `X` is a D-by-N matrix (numpy array) and each column is a data instance. You can type `X[:, 0]` to extract the "first" data instance from `X`. (Caution! python and numpy's indices start from 0. That is, to get the first element in a vector, the index is 0 rather than 1.) <br/>
-  - Initialize the parameters
-  - Learning patterns: `w, b = logistic_train(X_train, Y_train, w, b, step_size=step_size, max_iterations=max_iterations)`, in which the code takes `X_train` and the desired labels `Y_train` as input and output the weights `w` and the bias `b`.
-  - Apply the learned patterns to the data: `training_accuracy = linear_model_accuracy(X_train, Y_train, w, b)`, `validation_accuracy = linear_model_accuracy(X_val, Y_val, w, b)`, and `test_accuracy = linear_model_accuracy(X_test, Y_test, w, b)` to compute the training, validation, and test error.
-
-* In `def logistic_train`, you are to implement the training process of logistic regression (using MLE), using gradient descent.
-
-* In `def linear_model_accuracy`, you can see how the accuracy (for training, validation, or test data) is computed.
-
-* `def sigmoid` implements the sigmoid function.
-
-* **You will see similar code structure for other questions!**
-* 
+* In `def pocket_train`, you are to implement the training process of the pocket algorithm, using (stochastic) gradient descent. 
   
 ## Coding (10/20 pts):
 
-You have one parts to implement in `def logistic_train`:
+You have one part to implement in `def pocket_train`:
 
-* The function `def logistic_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q1 starts here ###` and `### Your job Q1 ends here ###`. Note that, `1` has not been appended into `X` and we define `tilde_X`for you. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+* The function `def pocket_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q2 starts here ###` and `### Your job Q2 ends here ###`. Note that, `1` has not been appended into `X` and we define `tilde_X`for you. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
-* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training objective we want you to minimize.**
+* You may need to run the `linear_model_accuracy` function to compute the training accuracy for recording the best `w` and `b` so far.
+
+* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process we want you to implement.**
 
 ## Play with different datasets (Task 1 - linear testing, 2/20 pts):
 
 * Please run the following command<br/>
-`python3 Classification.py --algorithm logistic --data linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
-This command will run logistic regression on 2D linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+`python3 Classification.py --algorithm pocket --data linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
+This command will run the algorithm on 2D linear data. You will see the training, validation, and test accuracy being displayed in your command line.
 
 * Your test accuracy should be close to 1.0.
 
@@ -203,16 +191,16 @@ This command will run logistic regression on 2D linear data. You will see the tr
 ## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
 
 * Please run the following command<br/>
-`python3 Classification.py --algorithm logistic --data quadratic --feature linear --step_size 0.1 --max_iterations 500`<br/>
-This command will run logistic regression on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
+`python3 Classification.py --algorithm pocket --data quadratic --feature linear --step_size 0.1 --max_iterations 500`<br/>
+This command will run the algorithm on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
 
-* Your test accuracy should be close to 0.66.
+* Your test accuracy should be close to 0.52.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
 * Please run the following command<br/>
-`python3 Classification.py --algorithm logistic --data quadratic --feature quadratic --step_size 0.1 --max_iterations 500`<br/>
-This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running logistic regression. You will see the training, validation, and test accuracy being displayed in your command line.
+`python3 Classification.py --algorithm pocket --data quadratic --feature quadratic --step_size 0.1 --max_iterations 500`<br/>
+This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running the algorithm. You will see the training, validation, and test accuracy being displayed in your command line.
 
 * Your test accuracy should be close to 0.96.
 
@@ -223,10 +211,10 @@ This command will first perform a feature transform with polynomial degree 2 (se
 ## Play with different datasets (Task 3 -noisy linear data, 2/20 pts):
 
 * Please run the following command<br/>
-`python3 Classification.py --algorithm logistic --data noisy_linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
-This command will run logistic regression on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+`python3 Classification.py --algorithm pocket --data noisy_linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
+This command will run the algorithm on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
 
-* Your test accuracy should be close to 0.85.
+* Your test accuracy should be close to 0.75.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
@@ -235,10 +223,10 @@ This command will run logistic regression on 2D noisy linear data. You will see 
 ## Play with different datasets (Task 4 - mnist data, 2/20 pts):
 
 * Please run the following command<br/>
-`python3 Classification.py --algorithm logistic --data mnist --feature linear --step_size 0.1 --max_iterations 500`<br/>
-This command will run logistic regression on mnist data for binary classification. You will see the training, validation, and test accuracy being displayed in your command line.
+`python3 Classification.py --algorithm pocket --data mnist --feature linear --step_size 0.1 --max_iterations 500`<br/>
+This command will run the algorithm on mnist data for binary classification. You will see the training, validation, and test accuracy being displayed in your command line.
 
-* Your test accuracy should be close to 0.84.
+* Your test accuracy should be close to 0.8.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
@@ -252,6 +240,84 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 
 
+
+# Question 3: Soft-margin SVM algorithm (20 pts)
+
+* You will implement the soft-margin SVM (with the hinge loss, so unconstrained) in this question. You are to amend your implementation into `Classification.py`.
+
+* There are many sub-functions in `Classification.py`. You can ignore all of them but `def SVM_train`, `def linear_model_accuracy`, `def main`. The main contents of `def linear_model_accuracy` and `def main` are the same as in Question 1.
+
+* In `def SVM_train`, you are to implement the training process of the soft-margin SVM, using gradient descent. 
+  
+## Coding (10/20 pts):
+
+You have one part to implement in `def SVM_train`:
+
+* The function `def SVM_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q2 starts here ###` and `### Your job Q2 ends here ###`. Note that, `1` has not been appended into `X` and we define `tilde_X`for you. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+
+* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process we want you to implement.**
+
+## Play with different datasets (Task 1 - linear testing, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm pocket --data linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
+This command will run the algorithm on 2D linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 1.0.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not coverge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not coverge.
+
+## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm pocket --data quadratic --feature linear --step_size 0.1 --max_iterations 500`<br/>
+This command will run the algorithm on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.52.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm pocket --data quadratic --feature quadratic --step_size 0.1 --max_iterations 500`<br/>
+This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running the algorithm. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.96.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* You may again play with a different learning rate (step_size) and number of iterations.
+
+## Play with different datasets (Task 3 -noisy linear data, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm pocket --data noisy_linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
+This command will run the algorithm on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.75.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* You may again play with a different learning rate (step_size) and number of iterations, or do `--feature quadratic`. Will performing feature transform improve the accuracy?
+
+## Play with different datasets (Task 4 - mnist data, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm pocket --data mnist --feature linear --step_size 0.1 --max_iterations 500`<br/>
+This command will run the algorithm on mnist data for binary classification. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.84.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* You may again play with a different learning rate (step_size) and number of iterations. Please do NOT do `--feature quadratic`.
+
+## Discussion (Task 5, 2/20 pts):
+
+Please discuss what you observe from these experiments. You may additionally discuss what you find from changing the hyper-parameters.
+
+* **Please write the discussions in the PDF.**
 
 
 
