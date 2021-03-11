@@ -2,7 +2,7 @@
 
 ## Submission instructions
 
-* Due date and time: February 30st (Tuesday), 11:59 pm ET
+* Due date and time: March 30st (Tuesday), 11:59 pm ET
 
 * Carmen submission: 
 Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the following files
@@ -60,9 +60,13 @@ In this homework, you are to implement several binary classification algorithms,
 
 
 
+
+
 # Question 0: Read the instructions (0 pts)
 
 * Please read `HW2+3.pdf` and `HW2+3.ppt` for some more details and instructions of the homework.
+
+
 
 
 
@@ -88,7 +92,7 @@ In this homework, you are to implement several binary classification algorithms,
   
 ## Coding (10/20 pts):
 
-You have one part to implement in `def logistic_train`:
+You have one part to implement:
 
 * The function `def logistic_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q1 starts here ###` and `### Your job Q1 ends here ###`. Note that, `1` has not been appended into `X` and we define `tilde_X`for you. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
@@ -104,7 +108,7 @@ This command will run logistic regression on 2D linear data. You will see the tr
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not coverge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not coverge.
+* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not coverge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not coverge.
 
 ## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
 
@@ -136,7 +140,7 @@ This command will run logistic regression on 2D noisy linear data. You will see 
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size) and number of iterations, or do `--feature quadratic`. Will performing feature transform improve the accuracy?
+* You may again play with a different learning rate (step_size) and number of iterations, or do `--feature quadratic`. Will performing feature transform `--feature quadratic` improve the accuracy?
 
 ## Play with different datasets (Task 4 - mnist data, 2/20 pts):
 
@@ -158,6 +162,8 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 
 
+
+
 # Question 2: Pocket algorithm (20 pts)
 
 * You will implement the pocket algorithm (improved perceptron) in this question. You are to amend your implementation into `Classification.py`.
@@ -168,7 +174,7 @@ Please discuss what you observe from these experiments. You may additionally dis
   
 ## Coding (10/20 pts):
 
-You have one part to implement in `def pocket_train`:
+You have one part to implement:
 
 * The function `def pocket_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q2 starts here ###` and `### Your job Q2 ends here ###`. Note that, `1` has not been appended into `X` and we define `tilde_X`for you. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
@@ -186,7 +192,7 @@ This command will run the algorithm on 2D linear data. You will see the training
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not coverge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not coverge.
+* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not coverge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not coverge.
 
 ## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
 
@@ -218,7 +224,7 @@ This command will run the algorithm on 2D noisy linear data. You will see the tr
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size) and number of iterations, or do `--feature quadratic`. Will performing feature transform improve the accuracy?
+* You may again play with a different learning rate (step_size) and number of iterations, or do `--feature quadratic`. Will performing feature transform `--feature quadratic` improve the accuracy?
 
 ## Play with different datasets (Task 4 - mnist data, 2/20 pts):
 
@@ -241,6 +247,7 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 
 
+
 # Question 3: Soft-margin SVM algorithm (20 pts)
 
 * You will implement the soft-margin SVM (with the hinge loss, so unconstrained) in this question. You are to amend your implementation into `Classification.py`.
@@ -251,28 +258,30 @@ Please discuss what you observe from these experiments. You may additionally dis
   
 ## Coding (10/20 pts):
 
-You have one part to implement in `def SVM_train`:
+You have one part to implement:
 
-* The function `def SVM_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q2 starts here ###` and `### Your job Q2 ends here ###`. Note that, `1` has not been appended into `X` and we define `tilde_X`for you. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+* The function `def SVM_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (`w` and `b`), the weights and bias of a linear classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q3 starts here ###` and `### Your job Q3 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
 
-* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process we want you to implement.**
+* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process/objective we want you to implement/minimize.**
 
 ## Play with different datasets (Task 1 - linear testing, 2/20 pts):
 
 * Please run the following command<br/>
-`python3 Classification.py --algorithm pocket --data linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
+`python3 Classification.py --algorithm SVM --data linear --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.1`<br/>
 This command will run the algorithm on 2D linear data. You will see the training, validation, and test accuracy being displayed in your command line.
 
 * Your test accuracy should be close to 1.0.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not coverge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not coverge.
+* You may play with other commands by (1) changing the learning rate (step_size) `--step_size 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with too large step_sizes, the algorithm may not coverge; (2) changing the number of iterations `--max_iterations 500` to some smaller (or larger) numbers. You will see that, with too smaller numbers, the algorithm may not coverge.
+
+* **You may additionally change the regularization coefficient (see the slide) `--reg_coeff 0.1` to other numbers (you may try a number `10**c`, where `c` is an integer). You will see that, with a too large reg_coeff, the algorithm will underfit (i.e., get low training and test accuracies).
 
 ## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
 
 * Please run the following command<br/>
-`python3 Classification.py --algorithm pocket --data quadratic --feature linear --step_size 0.1 --max_iterations 500`<br/>
+`python3 Classification.py --algorithm SVM --data quadratic --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.1`<br/>
 This command will run the algorithm on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
 
 * Your test accuracy should be close to 0.52.
@@ -280,44 +289,287 @@ This command will run the algorithm on 2D quadratic data. You will see the train
 * **Please report your training, validation, and test accuracy in the PDF.**
 
 * Please run the following command<br/>
-`python3 Classification.py --algorithm pocket --data quadratic --feature quadratic --step_size 0.1 --max_iterations 500`<br/>
+`python3 Classification.py --algorithm SVM --data quadratic --feature quadratic --step_size 0.1 --max_iterations 500 --reg_coeff 0.001`<br/>
 This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running the algorithm. You will see the training, validation, and test accuracy being displayed in your command line.
 
-* Your test accuracy should be close to 0.96.
+* Your test accuracy should be close to 0.97.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size) and number of iterations.
+* You may again play with a different learning rate (step_size), number of iterations, and regularization coefficient.
 
 ## Play with different datasets (Task 3 -noisy linear data, 2/20 pts):
 
 * Please run the following command<br/>
-`python3 Classification.py --algorithm pocket --data noisy_linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
+`python3 Classification.py --algorithm SVM --data noisy_linear --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.1`<br/>
 This command will run the algorithm on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
 
-* Your test accuracy should be close to 0.75.
+* Your test accuracy should be close to "1".
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size) and number of iterations, or do `--feature quadratic`. Will performing feature transform improve the accuracy?
+* You may again play with a different learning rate (step_size), number of iterations, regularization coefficient, or do `--feature quadratic`. Will performing feature transform `--feature quadratic` improve/degrade the accuracy?
 
 ## Play with different datasets (Task 4 - mnist data, 2/20 pts):
 
 * Please run the following command<br/>
-`python3 Classification.py --algorithm pocket --data mnist --feature linear --step_size 0.1 --max_iterations 500`<br/>
+`python3 Classification.py --algorithm SVM --data mnist --feature linear --step_size 0.1 --max_iterations 500 --reg_coeff 0.0`<br/>
 This command will run the algorithm on mnist data for binary classification. You will see the training, validation, and test accuracy being displayed in your command line.
 
 * Your test accuracy should be close to 0.84.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
-* You may again play with a different learning rate (step_size) and number of iterations. Please do NOT do `--feature quadratic`.
+* You may again play with a different learning rate (step_size), number of iterations, and regularization coefficient. Please do NOT do `--feature quadratic`.
 
 ## Discussion (Task 5, 2/20 pts):
 
 Please discuss what you observe from these experiments. You may additionally discuss what you find from changing the hyper-parameters.
 
 * **Please write the discussions in the PDF.**
+
+
+
+
+
+# Question 4: Naive Bayes linear classifier (20 pts)
+
+* You will implement the Naive Bayes algorithm for linear classification in this question. You are to amend your implementation into `Classification.py`.
+
+* There are many sub-functions in `Classification.py`. You can ignore all of them but `def NB_linear_train`, `def NB_linear_model_accuracy`, `def main`. The main contents of `def main` is the same as in Question 1.
+
+* In `def NB_linear_train`, you are to implement the training process of Naive Bayes, using the "closed-form" solution.
+
+* ** In `def NB_linear_model_accuracy`, you are to implement the classification rule of Naive Bayes and calculate the accuracy on a data set.
+  
+## Coding (10/20 pts):
+
+You have two parts to implement:
+
+* The function `def NB_linear_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (parameters of Naive Bayes) of a linear Naive Bayes classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q4.1 starts here ###` and `### Your job Q4.1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+
+* The function `def NB_linear_model_accuracy`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to compute the accuracy. You are to implement your code between `### Your job Q4.2 starts here ###` and `### Your job Q4.2 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+
+* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process/objective we want you to implement/minimize.**
+
+## Play with different datasets (Task 1 - linear testing, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm NB_linear --data linear --feature linear`<br/>
+This command will run the algorithm on 2D linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 1.0.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm NB_linear --data quadratic --feature linear`<br/>
+This command will run the algorithm on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.66.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm NB_linear --data quadratic --feature quadratic`<br/>
+This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running the algorithm. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.95.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+## Play with different datasets (Task 3 -noisy linear data, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm NB_linear --data noisy_linear --feature linear`<br/>
+This command will run the algorithm on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.95.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* Will performing feature transform `--feature quadratic` improve/degrade the accuracy?
+
+## Play with different datasets (Task 4 - mnist data, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm NB_linear --data mnist --feature linear`<br/>
+This command will run the algorithm on mnist data for binary classification. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.75.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* Please do NOT do `--feature quadratic`.
+
+## Discussion (Task 5, 2/20 pts):
+
+Please discuss what you observe from these experiments.
+
+* **Please write the discussions in the PDF.**
+
+
+
+
+
+# Question 5: GDA linear classifier (20 pts)
+
+* You will implement the GDA algorithm for linear classification in this question. You are to amend your implementation into `Classification.py`.
+
+* There are many sub-functions in `Classification.py`. You can ignore all of them but `def GDA_linear_train`, `def GDA_linear_model_accuracy`, `def main`. The main contents of `def main` is the same as in Question 1.
+
+* In `def GDA_linear_train`, you are to implement the training process of GDA, using the "closed-form" solution.
+
+* ** In `def GDA_linear_model_accuracy`, you are to implement the classification rule of GDA and calculate the accuracy on a data set.
+  
+## Coding (10/20 pts):
+
+You have two parts to implement:
+
+* The function `def GDA_linear_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (parameters of GDA) of a linear GDA classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q5.1 starts here ###` and `### Your job Q5.1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+
+* The function `def GDA_linear_model_accuracy`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to compute the accuracy. You are to implement your code between `### Your job Q5.2 starts here ###` and `### Your job Q5.2 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+
+* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process/objective we want you to implement/minimize.**
+
+## Play with different datasets (Task 1 - linear testing, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm GDA_linear --data linear --feature linear`<br/>
+This command will run the algorithm on 2D linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 1.0.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+## Play with different datasets (Task 2 - quadratic data, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm GDA_linear --data quadratic --feature linear`<br/>
+This command will run the algorithm on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.66.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm GDA_linear --data quadratic --feature quadratic`<br/>
+This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running the algorithm. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.95.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+## Play with different datasets (Task 3 -noisy linear data, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm GDA_linear --data noisy_linear --feature linear`<br/>
+This command will run the algorithm on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.95.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* Will performing feature transform `--feature quadratic` improve/degrade the accuracy?
+
+## Play with different datasets (Task 4 - mnist data, 2/20 pts):
+
+* Please run the following command<br/>
+`python3 Classification.py --algorithm GDA_linear --data mnist --feature linear`<br/>
+This command will run the algorithm on mnist data for binary classification. You will see the training, validation, and test accuracy being displayed in your command line.
+
+* Your test accuracy should be close to 0.83.
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+* Please do NOT do `--feature quadratic`.
+
+## Discussion (Task 5, 2/20 pts):
+
+Please discuss what you observe from these experiments.
+
+* **Please write the discussions in the PDF.**
+
+
+
+
+
+# (Bonus) Question 6: Naive Bayes nonlinear classifier (15 pts)
+
+* You will implement the Naive Bayes algorithm for nonlinear classification in this question. You are to amend your implementation into `Classification.py`.
+
+* There are many sub-functions in `Classification.py`. You can ignore all of them but `def NB_nonlinear_train`, `def NB_nonlinear_model_accuracy`, `def main`. The main contents of `def main` is the same as in Question 1.
+
+* In `def NB_nonlinear_train`, you are to implement the training process of Naive Bayes, using the "closed-form" solution.
+
+* ** In `def NB_nonlinear_model_accuracy`, you are to implement the classification rule of Naive Bayes and calculate the accuracy on a data set.
+  
+## Coding (10/15 pts):
+
+You have two parts to implement:
+
+* The function `def NB_nonlinear_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (parameters of Naive Bayes) of a nonlinear Naive Bayes classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q6.1 starts here ###` and `### Your job Q6.1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+
+* The function `def NB_nonlinear_model_accuracy`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to compute the accuracy. You are to implement your code between `### Your job Q6.2 starts here ###` and `### Your job Q6.2 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+
+* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process/objective we want you to implement/minimize.**
+
+## Play with different datasets and discuss (5/15 pts):
+
+* Please run the following commands<br/>
+`python3 Classification.py --algorithm NB_nonlinear --data linear --feature linear`<br/>
+`python3 Classification.py --algorithm NB_nonlinear --data quadratic --feature linear`<br/>
+`python3 Classification.py --algorithm NB_nonlinear --data quadratic --feature quadratic`<br/>
+`python3 Classification.py --algorithm NB_nonlinear --data noisy_linear --feature linear`<br/>
+`python3 Classification.py --algorithm NB_nonlinear --data mnist --feature linear`<br/>
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+Please discuss what you observe from these experiments.
+
+* **Please write the discussions in the PDF.**
+
+
+
+
+
+# (Bonus) Question 7: GDA nonlinear classifier (15 pts)
+
+* You will implement the GDA algorithm for nonlinear classification in this question. You are to amend your implementation into `Classification.py`.
+
+* There are many sub-functions in `Classification.py`. You can ignore all of them but `def GDA_nonlinear_train`, `def GDA_nonlinear_model_accuracy`, `def main`. The main contents of `def main` is the same as in Question 1.
+
+* In `def GDA_nonlinear_train`, you are to implement the training process of GDA, using the "closed-form" solution.
+
+* ** In `def GDA_nonlinear_model_accuracy`, you are to implement the classification rule of GDA and calculate the accuracy on a data set.
+  
+## Coding (10/15 pts):
+
+You have two parts to implement:
+
+* The function `def GDA_nonlinear_train`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to generate the required numpy arrays (parameters of GDA) of a nonlinear GDA classifier. Please make sure that your results follow the required numpy array shapes. You are to implement your code between `### Your job Q7.1 starts here ###` and `### Your job Q7.1 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+
+* The function `def GDA_nonlinear_model_accuracy`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format, and your goal is to compute the accuracy. You are to implement your code between `### Your job Q7.2 starts here ###` and `### Your job Q7.2 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement.
+
+* **Please read `HW2+3.pdf` and `HW2+3.ppt` for what training process/objective we want you to implement/minimize.**
+
+## Play with different datasets (5/15 pts):
+
+* Please run the following commands<br/>
+`python3 Classification.py --algorithm GDA_nonlinear --data linear --feature linear`<br/>
+`python3 Classification.py --algorithm GDA_nonlinear --data quadratic --feature linear`<br/>
+`python3 Classification.py --algorithm GDA_nonlinear --data quadratic --feature quadratic`<br/>
+`python3 Classification.py --algorithm GDA_nonlinear --data noisy_linear --feature linear`<br/>
+`python3 Classification.py --algorithm GDA_nonlinear --data mnist --feature linear`<br/>
+
+* **Please report your training, validation, and test accuracy in the PDF.**
+
+Please discuss what you observe from these experiments.
+
+* **Please write the discussions in the PDF.**
+
 
 
 
@@ -331,6 +583,6 @@ Please discuss what you observe from these experiments. You may additionally dis
 
 # What to report in `name.number.pdf`
 
-* For Question 1, Task 5, please write down for each data the best polynomial degree and the corresponding training and test error. Please discuss for `unknown_noise`, why its best polynomial degree is different from that of `unknown`.
-
-* For Question 2, please report `best_dis_metric`, `best_K`, `best_val_accuracy` , and `test_accuracy` in the PDF.
+* For Question 1-5, please write down for each data (and command) the training, validation, and test error. Please discuss your observations from these experiments.
+* 
+* For Question 6-7 (Bonus), please write down for each data (and command) the training, validation, and test error. Please discuss your observations from these experiments.
