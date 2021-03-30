@@ -200,7 +200,7 @@ This command will run the algorithm on 2D linear data. You will see the training
 `python3 Classification.py --algorithm pocket --data quadratic --feature linear --step_size 0.1 --max_iterations 500`<br/>
 This command will run the algorithm on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
 
-* Your test accuracy should be close to 0.52.
+* Your test accuracy should be close to 0.68.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
@@ -208,7 +208,7 @@ This command will run the algorithm on 2D quadratic data. You will see the train
 `python3 Classification.py --algorithm pocket --data quadratic --feature quadratic --step_size 0.1 --max_iterations 500`<br/>
 This command will first perform a feature transform with polynomial degree 2 (see the slides) on 2D quadratic data before running the algorithm. You will see the training, validation, and test accuracy being displayed in your command line.
 
-* Your test accuracy should be close to 0.96.
+* Your test accuracy should be close to 0.95.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
@@ -220,7 +220,7 @@ This command will first perform a feature transform with polynomial degree 2 (se
 `python3 Classification.py --algorithm pocket --data noisy_linear --feature linear --step_size 0.1 --max_iterations 500`<br/>
 This command will run the algorithm on 2D noisy linear data. You will see the training, validation, and test accuracy being displayed in your command line.
 
-* Your test accuracy should be close to 0.75.
+* Your test accuracy should be close to 1.0.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
@@ -232,7 +232,7 @@ This command will run the algorithm on 2D noisy linear data. You will see the tr
 `python3 Classification.py --algorithm pocket --data mnist --feature linear --step_size 0.1 --max_iterations 500`<br/>
 This command will run the algorithm on mnist data for binary classification. You will see the training, validation, and test accuracy being displayed in your command line.
 
-* Your test accuracy should be close to 0.8.
+* Your test accuracy should be close to 0.83.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
 
