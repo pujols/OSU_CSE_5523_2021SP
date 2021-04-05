@@ -93,7 +93,7 @@ You have two parts to implement:
 
 * The function `def adaboost_accuracy`: please go to the function and read the input format, output format, and the instructions carefully. You can assume that the actual inputs will follow the input format (including the data structure you use for `F`), and your goal is to compute the prediction accuracy (between 0 and 1). Please make sure that you implement the decision rule of Adaboost right, using the parameters saved in `F`. You are to implement your code between `### Your job Q2 starts here ###` and `### Your job Q2 ends here ###`. You are free to create more space between those two lines: we include them just to explicitly tell you where you are going to implement. 
 
-## Play with different datasets (Task 1 - linear testing, 2/15 pts): 
+## Play with different datasets (Task 1 - linear testing, 2/50 pts): 
 
 * Please run the following command<br/>
 `python3 Adaboost.py --data linear --feature linear --max_iterations 100`<br/>
@@ -105,7 +105,7 @@ This command will run Adaboost on 2D linear data. You will see the training, val
 
 * You may change the number of iterations `--max_iterations 100` to some smaller (or larger) numbers. You will see that, with too smaller numbers (like 1 or 2), the algorithm may not perform well as the classifier is too simple (i.e., under-fitting).
 
-## Play with different datasets (Task 2 - quadratic data, 4/15 pts):
+## Play with different datasets (Task 2 - quadratic data, 4/50 pts):
 
 * Please run the following command<br/>
 `python3 Adaboost.py -data quadratic --feature linear --max_iterations 100`<br/>
@@ -121,7 +121,7 @@ This command will first perform a feature transform with polynomial degree 2 on 
 
 * You may change the number of iterations `--max_iterations 100` to some smaller (or larger) numbers. You will see that, with too smaller numbers (like 1 or 2), the algorithm may not perform well as the classifier is too simple (i.e., under-fitting).
 
-## Play with different datasets (Task 3 -noisy linear data, 2/15 pts):
+## Play with different datasets (Task 3 -noisy linear data, 2/50 pts):
 
 * Please run the following command<br/>
 `python3 Adaboost.py --data noisy_linear --feature linear --max_iterations 100`<br/>
@@ -131,7 +131,7 @@ This command will run Adaboost on 2D noisy linear data. You will see the trainin
 
 * You may change the number of iterations `--max_iterations 100` to some smaller (or larger) numbers. You will see that, with too smaller numbers (like 1 or 2), the algorithm may not perform well as the classifier is too simple (i.e., under-fitting).
 
-## Discussion (Task 4, 7/15 pts):
+## Discussion (Task 4, 7/50 pts):
 
 Please discuss what you observe from these experiments, including what you find from changing the hyper-parameters. Specifically, please discuss how changing the number of iterations (from 1 to larger numbers) affect the training, validation, and test accuracy.
 
