@@ -21,7 +21,7 @@ Submit a .zip file named `name.number.zip` (e.g., `chao.209.zip`) with the follo
 
 * You will see a folder `for_display`, which simply contains some images used for display here.
 
-* You can find the algorithm in your HW # 4 Problem set, Section 3. I will talk more about it in the lecture of 4/6. I will provide `HW4.pdf` and `HW4.ppt` for some more details and instructions of the homework.
+* You can find the algorithm in your HW # 4 Problem set, Section 3. I will talk more about it in the lecture of 4/6. Please see the lecture slide deck 22 for some more details of the implementation.
 
 * Please use python3 and write your own solutions from scratch. 
 
@@ -64,7 +64,7 @@ In this homework, you are to implement the Adaboost algorithm for binary classfi
 
 * Please first complete HW # 4 Problem set, Section 3.
 * I will talk more about Adaboost in the lecture of 4/6.
-* I will provide `HW4.pdf` and `HW4.ppt` for some more details and instructions of the homework.
+* Please see the lecture slide deck 22 for some more details of the implementation.
 
 
 
