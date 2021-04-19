@@ -108,7 +108,7 @@ This command will run Adaboost on 2D linear data. You will see the training, val
 ## Play with different datasets (Task 2 - quadratic data, 4/50 pts):
 
 * Please run the following command<br/>
-`python3 Adaboost.py -data quadratic --feature linear --max_iterations 100`<br/>
+`python3 Adaboost.py --data quadratic --feature linear --max_iterations 100`<br/>
 This command will run Adaboost on 2D quadratic data. You will see the training, validation, and test accuracy being displayed in your command line.
 
 * **Please report your training, validation, and test accuracy in the PDF.**
